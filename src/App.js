@@ -5,6 +5,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import IdeaDetails from "./components/ideas/IdeaDetails";
 import Navbar from "./components/layout/Navbar";
 import Signin from "./components/auth/Signin";
+import Signup from "./components/auth/Signup";
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
             <Route exact path="/" component={Dashboard} />
             <Route path="/idea/:id" component={IdeaDetails} />
             <Route path="/signin" component={Signin} />
+            <Route path="/signup" component={Signup} />
           </Switch>
         </div>
       </BrowserRouter>

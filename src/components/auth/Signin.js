@@ -3,15 +3,21 @@ import React, { Component } from "react";
 class Signin extends Component {
   constructor() {
     super();
-
+    this.state = {
+      email: "",
+      password: ""
+    };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
   onChange = e => {
-    console.log(e);
+    this.setState({
+      [e.target.id]: e.target.value
+    });
   };
   onSubmit = e => {
-    console.log(e);
+    e.preventDefault();
+    console.log(this.state);
   };
 
   render() {

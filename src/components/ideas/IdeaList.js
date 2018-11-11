@@ -1,31 +1,30 @@
 import React from "react";
 
+import IdeaSummary from "./IdeaSummary";
+
 const IdeaList = () => {
   return (
     <div className="project-list section">
-      <div className="card z-depth-0 project-summary">
-        <div className="card-content grey-text text-darken-3">
-          <span className="card-title">Project Title</span>
-          <p>Posted By Dev</p>
-          <p className="grey-text">Nov. 11th, 9:30am</p>
-        </div>
-      </div>
-
-      <div className="card z-depth-0 project-summary">
-        <div className="card-content grey-text text-darken-3">
-          <span className="card-title">Project Title</span>
-          <p>Posted By Dev</p>
-          <p className="grey-text">Nov. 11th, 9:30am</p>
-        </div>
-      </div>
-
-      <div className="card z-depth-0 project-summary">
-        <div className="card-content grey-text text-darken-3">
-          <span className="card-title">Project Title</span>
-          <p>Posted By Dev</p>
-          <p className="grey-text">Nov. 11th, 9:30am</p>
-        </div>
-      </div>
+      <IdeaSummary
+        title="Build this app"
+        user="Main Dev"
+        date="Nov. 11, 2018"
+      />
+      <IdeaSummary
+        title="Learn Garage Band"
+        user="Musician"
+        date="Nov. 1, 2018"
+      />
+      <IdeaSummary
+        title="New Italian Dish Idea"
+        user="youseenchef"
+        date="Apr. 1, 2018"
+      />
+      <IdeaSummary
+        title="Esperanto Programming Language"
+        user="LangGuy1990"
+        date="Feb. 17, 2018"
+      />
     </div>
   );
 };

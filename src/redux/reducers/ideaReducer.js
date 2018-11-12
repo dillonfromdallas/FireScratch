@@ -7,6 +7,10 @@ const initialState = {
 };
 
 const ideaReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "CREATE_IDEA":
+      console.log("Test Created", action.idea);
+  }
   return state;
 };
 

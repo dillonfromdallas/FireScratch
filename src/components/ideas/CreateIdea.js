@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
+import { createIdea } from "../../redux/actions/ideaActions";
 
 class CreateIdea extends Component {
   constructor() {
@@ -17,7 +20,7 @@ class CreateIdea extends Component {
   };
   onSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.createIdea(this.state);
   };
 
   render() {
@@ -49,4 +52,13 @@ class CreateIdea extends Component {
   }
 }
 
-export default CreateIdea;
+const mapDispatchToProps = dispatch => {
+  return {
+    createIdea: idea => dispatch(createIdea(idea))
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(CreateIdea);

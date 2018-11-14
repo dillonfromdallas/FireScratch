@@ -10,8 +10,13 @@ const ideaReducer = (state = initialState, action) => {
   switch (action.type) {
     case "CREATE_IDEA":
       console.log("Test Created", action.idea);
+      return state;
+    case "GET_ERRORS":
+      console.log(`Err: ${action.err}`);
+      return state;
+    default:
+      return state;
   }
-  return state;
 };
 
 export default ideaReducer;

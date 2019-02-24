@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router";
 
 import { createIdea } from "../../redux/actions/ideaActions";
 
@@ -20,7 +21,7 @@ class CreateIdea extends Component {
   };
   onSubmit = e => {
     e.preventDefault();
-    this.props.createIdea(this.state);
+    this.props.createIdea(this.state, this.props.history);
   };
 
   render() {
@@ -52,13 +53,7 @@ class CreateIdea extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    createIdea: idea => dispatch(createIdea(idea))
-  };
-};
-
 export default connect(
   null,
-  mapDispatchToProps
-)(CreateIdea);
+  { createIdea }
+)(withRouter(CreateIdea));

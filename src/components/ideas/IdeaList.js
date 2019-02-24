@@ -8,8 +8,8 @@ const IdeaList = ({ ideas }) => {
       {ideas &&
         ideas.map(idea => {
           return (
-            <Link to={`/idea/${idea.id}`}>
-              <IdeaSummary idea={idea} key={idea.id} />
+            <Link to={`/idea/${idea.id}`} key={idea.id}>
+              <IdeaSummary idea={idea} />
             </Link>
           );
         })}

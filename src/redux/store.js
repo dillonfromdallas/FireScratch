@@ -11,6 +11,8 @@ import rootReducer from "./reducers";
 firebase.initializeApp(firebaseConfig);
 firebase.firestore();
 
+firebase.firestore().settings({ timestampsInSnapshots: true });
+
 const store = createStore(
   rootReducer,
   compose(

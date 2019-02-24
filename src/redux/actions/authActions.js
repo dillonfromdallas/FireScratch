@@ -1,14 +1,11 @@
-export const createIdea = (idea, history) => {
+export const createUser = (userData, history) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
     const firestore = getFirestore();
     firestore
-      .collection("ideas")
+      .collection("users")
       .add({
-        ...idea,
-        userFirstName: "Tempo",
-        userLastName: "Rary",
-        createdAt: new Date()
+        ...userData
       })
       .then(() => {
         dispatch(history.push("/"));

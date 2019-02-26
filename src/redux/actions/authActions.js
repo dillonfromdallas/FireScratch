@@ -1,11 +1,11 @@
 export const createUser = (userData, history) => {
-  return (dispatch, { getFirebase }) => {
+  return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
     const { email, password, username } = userData;
     firebase
       .createUser({ email, password }, { email, username })
-      .then(dispatch(history.push("/")))
-      .catch(err => dispatch({ type: "GET_ERRORS", err }));
+      .then(() => dispatch(history.push("/")))
+      .catch(err => dispatch({ type: "GET_ERRORS", payload: err }));
   };
 };
 

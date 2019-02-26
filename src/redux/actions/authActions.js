@@ -10,7 +10,7 @@ export const createUser = (userData, history) => {
 };
 
 export const loginUser = (userData, history) => {
-  return (dispatch, { getFirebase, getFirestore }) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
     const { email, password } = userData;
     firebase
@@ -19,7 +19,7 @@ export const loginUser = (userData, history) => {
         dispatch(history.push("/"));
       })
       .catch(err => {
-        dispatch({ type: "GET_ERRORS", err });
+        dispatch({ type: "GET_ERRORS", payload: err });
       });
   };
 };

@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 
-export default class Landing extends Component {
+class Landing extends Component {
   render() {
+    const { auth } = this.props;
+    if (auth.uid) return <Redirect to="/home" />;
     return (
       <div className="landing">
         <div className="container">
@@ -41,3 +44,9 @@ export default class Landing extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  auth: state.firebase.auth
+});
+
+export default connect(mapStateToProps)(Landing);

@@ -23,12 +23,12 @@ class CreateIdea extends Component {
   onSubmit = e => {
     e.preventDefault();
     this.props.createIdea(this.state);
-    this.props.history.push("/");
+    this.props.history.push("/home");
   };
 
   render() {
     const { auth } = this.props;
-    if (!auth.uid) return <Redirect to="/" />;
+    if (!auth.uid) return <Redirect to="/home" />;
     return (
       <div className="container">
         <form onSubmit={this.onSubmit} className="white">

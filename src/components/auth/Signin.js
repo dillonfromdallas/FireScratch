@@ -42,7 +42,7 @@ class Signin extends Component {
 
   render() {
     const { auth } = this.props;
-    if (auth.uid) return <Redirect to="/" />;
+    if (auth.uid) return <Redirect to="/home" />;
     const errorsToDisplay = !!Object.keys(this.state.errors).length;
     return (
       <div className="landing">

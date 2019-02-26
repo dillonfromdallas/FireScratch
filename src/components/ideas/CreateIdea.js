@@ -22,7 +22,8 @@ class CreateIdea extends Component {
   };
   onSubmit = e => {
     e.preventDefault();
-    this.props.createIdea(this.state, this.props.history);
+    this.props.createIdea(this.state);
+    this.props.history.push("/");
   };
 
   render() {

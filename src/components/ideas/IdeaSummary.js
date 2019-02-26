@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 const IdeaSummary = ({ idea }) => {
   return (
@@ -6,10 +7,10 @@ const IdeaSummary = ({ idea }) => {
       <div className="card-content grey-text text-darken-3">
         <span className="card-title">{idea.title}</span>
         <p>{idea.body}</p>
+        <p className="grey-text">By: {idea.authorName}</p>
         <p className="grey-text">
-          By: {idea.userFirstName} {idea.userLastName}
+          {moment(idea.createdAt.toDate()).calendar()}
         </p>
-        <p className="grey-text">Today</p>
       </div>
     </div>
   );

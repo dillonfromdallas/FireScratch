@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
+import { Redirect } from "react-router-dom";
 
 import { createIdea } from "../../redux/actions/ideaActions";
 
@@ -25,6 +26,8 @@ class CreateIdea extends Component {
   };
 
   render() {
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to="/" />;
     return (
       <div className="container">
         <form onSubmit={this.onSubmit} className="white">
@@ -53,7 +56,13 @@ class CreateIdea extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   { createIdea }
 )(withRouter(CreateIdea));

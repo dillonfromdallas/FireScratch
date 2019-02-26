@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 
 import { createUser } from "../../redux/actions/authActions";
 
@@ -43,6 +43,8 @@ class Signup extends Component {
   }
 
   render() {
+    const { auth } = this.props;
+    if (auth.uid) return <Redirect to="/" />;
     const errorsToDisplay = !!Object.keys(this.state.errors).length;
     return (
       <div className="container">
@@ -78,7 +80,8 @@ Signup.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  errors: state.errors
+  errors: state.errors,
+  auth: state.firebase.auth
 });
 
 export default connect(

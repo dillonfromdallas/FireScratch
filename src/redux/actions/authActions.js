@@ -14,10 +14,24 @@ export const loginUser = (userData, history) => {
     const firebase = getFirebase();
     const { email, password } = userData;
     firebase
-      .login({ email, password })
+      .auth()
+      .signInWithEmailAndPassword(email, password)
       .then(() => {
-        dispatch(history.push("/"));
+        dispatch({ type: "LOGIN_USER" });
       })
+      .catch(err => {
+        dispatch({ type: "GET_ERRORS", payload: err });
+      });
+  };
+};
+
+export const logoutUser = () => {
+  return (dispatch, getState, { getFirebase }) => {
+    const firebase = getFirebase();
+    firebase
+      .auth()
+      .signOut()
+      .then(() => dispatch({ type: "LOGOUT_USER" }))
       .catch(err => {
         dispatch({ type: "GET_ERRORS", payload: err });
       });

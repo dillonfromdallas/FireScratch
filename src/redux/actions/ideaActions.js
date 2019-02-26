@@ -1,6 +1,5 @@
 export const createIdea = (idea, history) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
-    const firebase = getFirebase();
     const firestore = getFirestore();
     firestore
       .collection("ideas")

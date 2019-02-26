@@ -1,3 +1,7 @@
+:root {
+  --bg-color: #ea454b;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -23,11 +27,102 @@ input[type="text"]:not(.browser-default):focus:not([readonly]),
 input[type="email"]:not(.browser-default):focus:not([readonly]),
 input[type="password"]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-color: #ec407a;
-  box-shadow: none;
+  border-color: white;
+  box-shadow: 0 1px 0 0 white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.landing {
+  background-color: var(--bg-color);
+  height: 100vh;
+  width: 100vw;
+}
+
+.landing .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.landing .container .header-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-row .header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-text {
+  font-size: 7rem;
+  border-width: 3px;
+  font-family: "Courgette", monospace;
+}
+
+.tagline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.tagline-text {
+  font-size: 2rem;
+  margin-top: 5%;
+}
+
+.landing .button-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 5%;
+  font-size: 1rem;
+  min-width: 75%;
+}
+
+.landing-button {
+  font-style: normal;
+}
+
+.border-button {
+  border: 1px solid white;
+  background-color: var(--bg-color);
+  box-shadow: none;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+  text-align: center;
+}
+
+/* label color */
+.input-field label {
+  color: white;
+}
+/* label focus color */
+.input-field input:focus + label {
+  color: white;
+}
+
+/* label underline focus color */
+.input-field input:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+.landing form input {
+  color: white;
 }

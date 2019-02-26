@@ -7,19 +7,23 @@ import IdeaDetails from "./components/ideas/IdeaDetails";
 import Navbar from "./components/layout/Navbar";
 import Signin from "./components/auth/Signin";
 import Signup from "./components/auth/Signup";
+import Landing from "./components/layout/Landing";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="App">
-          <Navbar />
+          <Switch>
+            <Route exact path="/landing" component={Landing} />
+            <Route path="/signin" component={Signin} />
+            <Route path="/signup" component={Signup} />
+            <Navbar />
+          </Switch>
           <Switch>
             <Route exact path="/" component={Dashboard} />
             <Route path="/idea/new" component={CreateIdea} />
             <Route path="/idea/:id" component={IdeaDetails} />
-            <Route path="/signin" component={Signin} />
-            <Route path="/signup" component={Signup} />
           </Switch>
         </div>
       </BrowserRouter>

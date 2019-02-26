@@ -1,0 +1,43 @@
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
+export default class Landing extends Component {
+  render() {
+    return (
+      <div className="landing">
+        <div className="container">
+          <div className="header-row row">
+            <div className="col s12 header ">
+              <h1 className="white-text header-text">Howdy</h1>
+            </div>
+          </div>
+          <div className="col s12 tagline">
+            <div className="white-text tagline-text">
+              The note-taking app to help keep your head together.
+            </div>
+            <div className="button-row">
+              <Link
+                className="btn-large waves-effect waves-light white"
+                to="/signup"
+              >
+                <i className="red-text landing-button">Signup</i>
+              </Link>
+              <Link
+                className=" border-button btn-large waves-effect waves-light"
+                to="/"
+              >
+                <i className="white-text landing-button">Browse</i>
+              </Link>
+              <Link
+                className="border-button btn-large waves-effect waves-light white"
+                to="/signin"
+              >
+                <i className="red-text landing-button">Login</i>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}

@@ -12,7 +12,8 @@ export const createUser = (userData, history) => {
           .doc(res.user.uid)
           .set({
             email: email,
-            username: username
+            username: username,
+            userID: res.user.uid
           });
       })
       .then(() => dispatch({ type: "SIGNUP_USER" }))

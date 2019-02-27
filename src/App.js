@@ -8,6 +8,7 @@ import Navbar from "./components/layout/Navbar";
 import Signin from "./components/auth/Signin";
 import Signup from "./components/auth/Signup";
 import Landing from "./components/layout/Landing";
+import Profile from "./components/profile/Profile";
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
             <Route exact path="/home" component={Dashboard} />
             <Route path="/idea/new" component={CreateIdea} />
             <Route path="/idea/:id" component={IdeaDetails} />
+            <Route path="/user/:id" component={Profile} />
           </Switch>
         </div>
       </BrowserRouter>

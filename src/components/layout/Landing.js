@@ -27,7 +27,7 @@ class Landing extends Component {
               </Link>
               <Link
                 className=" border-button btn-large waves-effect waves-light"
-                to="/"
+                to="/home"
               >
                 <i className="white-text landing-button">Browse</i>
               </Link>

@@ -7,18 +7,19 @@ import { getProfile } from "../../redux/actions/profileActions";
 
 class IdeaSummary extends React.Component {
   render() {
-    const { idea, getProfile } = this.props;
+    const { idea, getProfile, history } = this.props;
+    console.log(this.props);
     return (
       <div className="card project-summary">
         <div className="card-content grey-text text-darken-3">
           <span className="card-title">{idea.title}</span>
           <p>{idea.body}</p>
-          <p
-            className="grey-text"
-            onClick={() => getProfile(idea.authorID, this.props.history)}
-          >
-            By: {idea.authorName}
-          </p>
+        </div>
+        <div
+          className="card-content grey-text text-darken-3"
+          onClick={() => getProfile(idea.authorID, history)}
+        >
+          <p className="grey-text">By: {idea.authorName}</p>
           <p className="grey-text">
             {moment(idea.createdAt.toDate()).calendar()}
           </p>

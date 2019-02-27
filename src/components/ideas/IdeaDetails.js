@@ -2,6 +2,7 @@ import React from "react";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
+import moment from "moment";
 
 const IdeaDetails = props => {
   const { idea } = props;
@@ -14,10 +15,8 @@ const IdeaDetails = props => {
             <p>{idea.body}</p>
           </div>
           <div className="card-action lighten-4 grey-text">
-            <div>
-              Posted by {idea.userFirstName} {idea.userLastName}
-            </div>
-            <div>Placeholder Date</div>
+            <div>Posted by {idea.authorName}</div>
+            <div>{moment(idea.createdAt.toDate()).calendar()}</div>
           </div>
         </div>
       </div>

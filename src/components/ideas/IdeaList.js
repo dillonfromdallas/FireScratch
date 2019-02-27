@@ -8,7 +8,7 @@ const IdeaList = ({ ideas }) => {
       {ideas &&
         ideas.map(idea => {
           return (
-            <Link to={`/idea/${idea.id}`} key={idea.id}>
+            <Link to={`/idea/${idea.id}`} key={idea.id} className="col s6">
               <IdeaSummary idea={idea} />
             </Link>
           );

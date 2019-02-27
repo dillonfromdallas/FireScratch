@@ -8,10 +8,10 @@ import SignedOutLinks from "./SignedOutLinks";
 const Navbar = props => {
   const { auth } = props;
   return (
-    <nav className="nav-wrapper grey darken-3">
+    <nav className="">
       <div className="container">
         <Link to="/" className="brand-logo">
-          FireScratch
+          Howdy
         </Link>
         {auth.uid ? <SignedInLinks /> : <SignedOutLinks />}
       </div>

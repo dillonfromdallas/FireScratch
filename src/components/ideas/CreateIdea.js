@@ -30,28 +30,32 @@ class CreateIdea extends Component {
     const { auth } = this.props;
     if (!auth.uid) return <Redirect to="/home" />;
     return (
-      <div className="container">
-        <form onSubmit={this.onSubmit} className="white">
-          <h5 className="grey-text text-darken-3">New Idea</h5>
+      <div className="idea-container">
+        <div className="container new-idea">
+          <form onSubmit={this.onSubmit} className="">
+            <h5 className="grey-text text-darken-3">New Idea</h5>
 
-          <div className="input-field">
-            <label htmlFor="title">Title</label>
-            <input type="text" id="title" onChange={this.onChange} />
-          </div>
+            <div className="input-field">
+              <label htmlFor="title">Title</label>
+              <input type="text" id="title" onChange={this.onChange} />
+            </div>
 
-          <div className="input-field">
-            <label htmlFor="body">Idea Details</label>
-            <textarea
-              id="body"
-              className="materialize-textarea"
-              onChange={this.onChange}
-            />
-          </div>
+            <div className="input-field">
+              <label htmlFor="body">Idea Details</label>
+              <textarea
+                id="body"
+                className="materialize-textarea"
+                onChange={this.onChange}
+              />
+            </div>
 
-          <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Submit</button>
-          </div>
-        </form>
+            <div className="input-field">
+              <button className="border-button btn-large waves-effect waves-light white-text landing-button">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

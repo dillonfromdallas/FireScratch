@@ -14,8 +14,8 @@ const SignedInLinks = props => {
         <a onClick={props.logout}>Log Out</a>
       </li>
       <li>
-        <NavLink to="/" className="btn btn-floating pink lighten-1">
-          PH
+        <NavLink to="/" className="btn btn-floating color-bad">
+          ツ
         </NavLink>
       </li>
     </ul>

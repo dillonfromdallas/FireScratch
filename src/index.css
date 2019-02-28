@@ -65,8 +65,14 @@ code {
 
 .header-text {
   font-size: 7rem;
-  border-width: 3px;
   font-family: "Courgette", monospace;
+}
+
+.app-label {
+  font-size: 3rem;
+  font-family: "Courgette", monospace;
+  font-style: italic;
+  color: white;
 }
 
 .tagline {
@@ -208,6 +214,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 li > .btn-large {

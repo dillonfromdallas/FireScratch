@@ -25,7 +25,7 @@ class App extends Component {
             <Route exact path="/home" component={Dashboard} />
             <Route path="/idea/new" component={CreateIdea} />
             <Route path="/idea/:id" component={IdeaDetails} />
-            <Route path="/user/:id" component={Profile} />
+            <Route path="/me" component={Profile} />
           </Switch>
         </div>
       </BrowserRouter>

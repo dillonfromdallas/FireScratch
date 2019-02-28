@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import { logoutUser } from "../../redux/actions/authActions";
 import { getProfile } from "../../redux/actions/profileActions";
@@ -11,7 +12,7 @@ class SignedInLinks extends React.Component {
     const {
       auth: { uid },
       logout,
-      profile,
+      Profile,
       history
     } = this.props;
     return (
@@ -25,12 +26,18 @@ class SignedInLinks extends React.Component {
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/idea/me"
-            className="btn-large waves-effect waves-light white red-text"
-          >
-            My Ideas
-          </NavLink>
+          {Profile ? (
+            <NavLink to="/home" className="app-label">
+              Howdy
+            </NavLink>
+          ) : (
+            <NavLink
+              to="/me"
+              className="btn-large waves-effect waves-light white red-text"
+            >
+              My Ideas
+            </NavLink>
+          )}
         </li>
         <li>
           <a
@@ -40,18 +47,18 @@ class SignedInLinks extends React.Component {
             Log Out
           </a>
         </li>
-        {/* <li>
-          <a
-            onClick={() => profile(uid, history)}
-            className="btn btn-floating color-bad"
-          >
-            ツ
-          </a>
-        </li> */}
       </ul>
     );
   }
 }
+
+SignedInLinks.propTypes = {
+  Profile: PropTypes.bool.isRequired
+};
+
+SignedInLinks.defaultProps = {
+  Profile: false
+};
 
 const mapDispatchToProps = dispatch => {
   return {

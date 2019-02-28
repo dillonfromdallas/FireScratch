@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: String(process.env.apiKey),
-  authDomain: String(process.env.authDomain),
-  databaseURL: String(process.env.databaseURL),
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  databaseURL: process.env.databaseURL,
   projectId: String(process.env.projectId),
-  storageBucket: String(process.env.storageBucket),
-  messagingSenderId: String(process.env.messagingSenderId)
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId
 };
 
 export default firebaseConfig;

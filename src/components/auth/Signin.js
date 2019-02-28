@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Redirect, withRouter } from "react-router-dom";
+import { NavLink, Redirect, withRouter } from "react-router-dom";
 
 import { loginUser } from "../../redux/actions/authActions";
 
@@ -56,10 +56,25 @@ class Signin extends Component {
               <label htmlFor="password">Password</label>
               <input type="password" id="password" onChange={this.onChange} />
             </div>
-            <div className="input-field">
-              <button className="border-button btn-large waves-effect waves-light white-text landing-button">
-                Log In
-              </button>
+            <div className="row action-row">
+              <ul>
+                <li>
+                  <NavLink
+                    to="/"
+                    className="border-button btn-large waves-effect waves-light white-text landing-button"
+                  >
+                    Cancel
+                  </NavLink>
+                </li>
+                <li>
+                  <button
+                    className="border-button btn-large waves-effect waves-light white-text landing-button"
+                    type="submit"
+                  >
+                    Log In
+                  </button>
+                </li>
+              </ul>
             </div>
           </form>
           {errorsToDisplay && this.renderErrors()}

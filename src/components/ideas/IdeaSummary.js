@@ -15,7 +15,7 @@ class IdeaSummary extends React.Component {
           <p>{idea.body}</p>
           <p
             className="grey-text"
-            onClick={() => getProfile(idea.authorID, this.props.history)}
+            // onClick={() => getProfile(idea.authorID, this.props.history)}
           >
             By: {idea.authorName}
           </p>

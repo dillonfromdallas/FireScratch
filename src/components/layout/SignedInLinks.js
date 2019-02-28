@@ -22,14 +22,14 @@ class SignedInLinks extends React.Component {
         <li>
           <a onClick={logout}>Log Out</a>
         </li>
-        <li>
+        {/* <li>
           <a
             onClick={() => profile(uid, history)}
             className="btn btn-floating color-bad"
           >
             ツ
           </a>
-        </li>
+        </li> */}
       </ul>
     );
   }

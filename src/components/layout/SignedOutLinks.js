@@ -13,6 +13,11 @@ const SignedOutLinks = () => {
         </NavLink>
       </li>
       <li>
+        <NavLink to="/" className="app-label">
+          Howdy
+        </NavLink>
+      </li>
+      <li>
         <NavLink
           to="/signin"
           className="btn-large waves-effect waves-light white red-text"

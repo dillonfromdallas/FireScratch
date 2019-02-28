@@ -15,12 +15,30 @@ class SignedInLinks extends React.Component {
       history
     } = this.props;
     return (
-      <ul className="right">
+      <ul>
         <li>
-          <NavLink to="/idea/new">New Idea</NavLink>
+          <NavLink
+            to="/idea/new"
+            className="btn-large waves-effect waves-light white red-text"
+          >
+            New Idea
+          </NavLink>
         </li>
         <li>
-          <a onClick={logout}>Log Out</a>
+          <NavLink
+            to="/idea/me"
+            className="btn-large waves-effect waves-light white red-text"
+          >
+            My Ideas
+          </NavLink>
+        </li>
+        <li>
+          <a
+            onClick={logout}
+            className="btn-large waves-effect waves-light white red-text"
+          >
+            Log Out
+          </a>
         </li>
         {/* <li>
           <a

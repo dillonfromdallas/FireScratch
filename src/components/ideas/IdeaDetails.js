@@ -3,15 +3,24 @@ import { compose } from "redux";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import moment from "moment";
+import { NavLink, withRouter } from "react-router-dom";
+
 import SignedInLinks from "../layout/SignedInLinks";
 import SignedOutLinks from "../layout/SignedOutLinks";
+import { deleteIdea } from "../../redux/actions/ideaActions";
 
 const IdeaDetails = props => {
   const {
     idea,
-    auth: { uid }
+    auth: { uid },
+    history,
+    deleteIdea,
+    match: {
+      params: { id }
+    }
   } = props;
   if (idea) {
+    console.log(id);
     return (
       <div className="bg-brand-red">
         <div className="container">
@@ -33,6 +42,28 @@ const IdeaDetails = props => {
             </div>
           </div>
         </div>
+        {uid === idea.authorID && (
+          <div className="row action-row">
+            <ul>
+              <li>
+                <NavLink
+                  className="border-button btn-large waves-effect waves-light white-text landing-button"
+                  to="/"
+                >
+                  Back
+                </NavLink>
+              </li>
+              <li>
+                <button
+                  className="border-button btn-large waves-effect waves-light white-text landing-button"
+                  onClick={() => deleteIdea(id, history)}
+                >
+                  Delete
+                </button>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     );
   } else {
@@ -42,6 +73,12 @@ const IdeaDetails = props => {
       </div>
     );
   }
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteIdea: (idea, history) => dispatch(deleteIdea(idea, history))
+  };
 };
 
 const mapStateToProps = (state, ownProps) => {
@@ -55,6 +92,9 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 export default compose(
-  connect(mapStateToProps),
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  ),
   firestoreConnect([{ collection: "ideas" }])
-)(IdeaDetails);
+)(withRouter(IdeaDetails));

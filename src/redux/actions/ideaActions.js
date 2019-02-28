@@ -19,3 +19,21 @@ export const createIdea = (idea, history) => {
       });
   };
 };
+
+export const deleteIdea = (idea, history) => {
+  return (dispatch, getState, { getFirestore }) => {
+    const firestore = getFirestore();
+    const { uid } = getState().firebase.auth;
+    firestore
+      .collection("ideas")
+      .doc(idea)
+      .delete()
+      .then(() => {
+        dispatch({ type: "DELETE_IDEA" });
+      })
+      .then(() => history.push("/"))
+      .catch(err => {
+        dispatch({ type: "GET_ERRORS", payload: err });
+      });
+  };
+};

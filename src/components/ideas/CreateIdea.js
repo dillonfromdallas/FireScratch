@@ -30,10 +30,12 @@ class CreateIdea extends Component {
     const { auth } = this.props;
     if (!auth.uid) return <Redirect to="/home" />;
     return (
-      <div className="idea-container">
-        <div className="container new-idea">
-          <form onSubmit={this.onSubmit} className="">
-            <h5 className="grey-text text-darken-3">New Idea</h5>
+      <div className="landing">
+        <div className="container">
+          <form onSubmit={this.onSubmit}>
+            <div className="row">
+              <h5 className="white-text">New Idea</h5>
+            </div>
 
             <div className="input-field">
               <label htmlFor="title">Title</label>
@@ -43,6 +45,7 @@ class CreateIdea extends Component {
             <div className="input-field">
               <label htmlFor="body">Idea Details</label>
               <textarea
+                type="text"
                 id="body"
                 className="materialize-textarea"
                 onChange={this.onChange}

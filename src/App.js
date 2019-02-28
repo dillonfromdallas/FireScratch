@@ -19,13 +19,13 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route path="/signin" component={Signin} />
             <Route path="/signup" component={Signup} />
-            <Navbar />
+            {/* <Navbar /> */}
           </Switch>
           <Switch>
             <Route exact path="/home" component={Dashboard} />
             <Route path="/idea/new" component={CreateIdea} />
             <Route path="/idea/:id" component={IdeaDetails} />
-            <Route path="/user/:id" component={Profile} />
+            <Route path="/me" component={Profile} />
           </Switch>
         </div>
       </BrowserRouter>

@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: process.env.apiKey,
-  authDomain: process.env.authDomain,
-  databaseURL: process.env.databaseURL,
-  projectId: String(process.env.projectId),
-  storageBucket: process.env.storageBucket,
-  messagingSenderId: process.env.messagingSenderId
+  apiKey: "AIzaSyAlM3TN1FqaIRp0wQeyTz0bEjSSD2Li7cE",
+  authDomain: "firescratch-b43e5.firebaseapp.com",
+  databaseURL: "https://firescratch-b43e5.firebaseio.com",
+  projectId: "firescratch-b43e5",
+  storageBucket: "firescratch-b43e5.appspot.com",
+  messagingSenderId: "42950246716"
 };
 
 export default firebaseConfig;

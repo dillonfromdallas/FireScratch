@@ -26,6 +26,7 @@ form h5 {
 input[type="text"]:not(.browser-default):focus:not([readonly]),
 input[type="email"]:not(.browser-default):focus:not([readonly]),
 input[type="password"]:not(.browser-default):focus:not([readonly]),
+textarea[type="text"]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
   border-color: white;
   box-shadow: 0 1px 0 0 white;
@@ -123,6 +124,21 @@ code {
   box-shadow: 0 1px 0 0 #000;
 }
 
+/* label color */
+div.new-idea > form > .input-field label {
+  color: black;
+}
+/* label focus color */
+div.new-idea > form > .input-field input:focus + label {
+  color: black;
+}
+
+/* label underline focus color */
+div.new-idea > form > .input-field input:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+
 .landing form input {
   color: white;
 }
@@ -139,21 +155,6 @@ div.new-idea > form {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-}
-
-/* label color */
-div.new-idea > form > .input-field label {
-  color: black;
-}
-/* label focus color */
-div.new-idea > form > .input-field input:focus + label {
-  color: black;
-}
-
-/* label underline focus color */
-div.new-idea > form > .input-field input:focus {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000;
 }
 
 nav .brand-logo {
@@ -216,4 +217,8 @@ li > .btn-large {
     0 5px 15px 0 rgba(0, 0, 0, 0.08);
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
     0 5px 15px 0 rgba(0, 0, 0, 0.08);
+}
+
+.materialize-textarea {
+  color: white;
 }
